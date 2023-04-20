@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'carted_products/index'
+  get 'carted_products/show'
+  get 'carted_products/new'
+  get 'carted_products/create'
+  get 'carted_products/edit'
+  get 'carted_products/update'
+  get 'carted_products/destroy'
   get 'orders/index'
   get 'orders/show'
   get 'orders/new'
