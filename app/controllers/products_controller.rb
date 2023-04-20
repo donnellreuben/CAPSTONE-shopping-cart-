@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      render json: {message: 'Product created successfully'}
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to products_path
+      render json: {message: 'Product updated successfully'}
     else
       render :edit
     end
@@ -49,6 +49,6 @@ class ProductsController < ApplicationController
 private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price)
+    params.permit(:name, :description, :price)
   end
 end
